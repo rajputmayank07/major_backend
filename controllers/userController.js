@@ -1,36 +1,5 @@
 const User= require("../models/User");
 
-// exports.register = async (req,res)=>{
-//     try {
-//         const{name,email,rfid_tag,subscriptionType}=req.body;
-//         let mealcount=0;
-//         if(subscriptionType==='single'){
-//             mealcount=1;
-//         }else if (subscriptionType==='monthly'){
-//             mealcount=30;
-//         }
-
-//         const user=new User({
-//             name,
-//             email,
-//             rfid_tag,
-//             meal_count:mealcount
-//         });
-//         await user.save();
-//         return res.status(201).json({
-//             success:true,
-//             message:'User registered successfully',
-//             data:user
-//         });
-//     }catch(error){
-//         console.error(error);
-//         return res.status(500).json({
-//             success:false,
-//             error:'Server error or duplicate email/rfid'
-//         });
-//     }
-// };
-
 exports.purchase = async (req, res) => {
     try {
       const userId = req.user.userId; // we get userId from the JWT payload
